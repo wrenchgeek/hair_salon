@@ -13,6 +13,7 @@ class Stylist
     returned_stylists.each() do |stylist|
       name = stylist.fetch("name")
       id = stylist.fetch('id')
+      binding.pry
       stylists.push(Stylist.new({:name => name, :id => id,}))
     end
     stylists
