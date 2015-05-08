@@ -4,5 +4,6 @@ class Stylist
 
   define_method(:initialize) do |attributes|
     @id = attributes.fetch(:id)
-    @name = atttributes.fetch(:name)
+    @name = attributes.fetch(:name)
   end
+end
