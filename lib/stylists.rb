@@ -44,4 +44,18 @@ class Stylist
     DB.exec("DELETE FROM stylists WHERE id = #{self.id};")
   end
 
+  define_method(:assign) do |client|
+    DB.exec("INSERT INTO stylists_clients (stylist_id, client_id) VALUES (#{self.id}, #{client.id});")
+  end
+
+  define_method(:all_assigns) do
+    returned_clients = DB.exec("SELECT * FROM stylists_clients WHERE stylist_id = #{self.id()};")
+    clients = []
+    returned_clients.each() do |client|
+      @id = client.fetch("client_id")
+      new_client = Client.find(@id)
+      clients.push(new_client)
+    end
+    clients
+  end
 end
