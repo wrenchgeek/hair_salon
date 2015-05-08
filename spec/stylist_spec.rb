@@ -29,4 +29,21 @@ describe(Stylist) do
     end
   end
 
+  describe('.find') do
+    it('returns the stylist by his/her id') do
+    test_stylist = Stylist.new({:name => "Abner", :id => nil})
+    test_stylist.save()
+    expect(Stylist.find(test_stylist.id())).to(eq(test_stylist))
+    end
+  end
+
+  describe('#update') do
+    it('updates the database with new information') do
+      test_stylist = Stylist.new({:name => "Samson", :id => nil})
+      test_stylist.save()
+      test_stylist.update({:name => "Sandra"})
+      expect(test_stylist.name()).to(eq("Sandra"))
+    end
+  end
+
 end

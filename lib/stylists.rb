@@ -24,8 +24,21 @@ class Stylist
   end
 
   define_method(:==) do |another_stylist|
-  self.name().==(another_stylist.name()).&(self.id().to_i().==(another_stylist.id().to_i()))
-end
+    self.name().==(another_stylist.name()).&(self.id().to_i().==(another_stylist.id().to_i()))
+  end
+
+  define_singleton_method(:find) do |id|
+    @id = id
+    results = DB.exec("SELECT * FROM stylists WHERE id = #{@id};")
+    @name = results.first().fetch('name')
+    Stylist.new({:name => @name, :id => @id})
+  end
+
+  define_method(:update) do |attributes|
+    @name = attributes.fetch(:name, @name)
+    @id = self.id()
+    DB.exec("UPDATE stylists SET name = '#{@name}' WHERE id = #{@id};")
+  end
 
 
 end
