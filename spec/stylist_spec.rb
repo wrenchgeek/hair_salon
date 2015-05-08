@@ -1,15 +1,10 @@
-require('rspec')
-require('pg')
-require('stylists')
-require('clients')
-require('pry')
+require('spec_helper')
 
-
-DB = PG.connect({:dbname => "hair_salon_test"})
-
-RSpec.configure do |config|
-  config.after(:each) do
-    DB.exec("DELETE FROM clients *;")
-    DB.exec("DELETE FROM stylists *;")
+describe(Stylist) do
+  describe('#id') do
+    it('returns the id of an individual stylist') do
+      test_stylist = Stylist.new({:id => 1, :name => "Edith"})
+      expect(test_patron.id()).to(eq(1))
+    end
   end
 end
