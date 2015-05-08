@@ -4,13 +4,13 @@ describe(Client) do
   describe('#id') do
     it('returns the id of an individual client') do
       test_client = Client.new({:id => 1, :name => "Edith"})
-      expect(test_stylist.id()).to(eq(1))
+      expect(test_client.id()).to(eq(1))
     end
   end
 
   describe('#name') do
-    it('returnst the name of an individual stylist') do
-      test_stylist = Stylist.new({:id => 1, :name => "Bruno"})
+    it('returnst the name of an individual client') do
+      test_client = Client.new({:id => 1, :name => "Bruno"})
       expect(test_client.name()).to(eq("Bruno"))
     end
   end
@@ -48,7 +48,7 @@ describe(Client) do
 
   describe('#delete') do
     it('deletes a client from the database') do
-      test_ = Client.new({:name => "Billy Bob", :id => nil})
+      test_client = Client.new({:name => "Billy Bob", :id => nil})
       test_client.save()
       test_client.delete()
       expect(Client.all()).to(eq([]))
