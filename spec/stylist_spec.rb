@@ -14,4 +14,11 @@ describe(Stylist) do
       expect(test_stylist.name()).to(eq("Edith"))
     end
   end
+
+  describe('.all') do
+  it('returns all of the stylists') do
+  expect(Stylist.all()).to(eq([]))
+  end
+end
+
 end
