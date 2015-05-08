@@ -55,4 +55,14 @@ describe(Stylist) do
     end
   end
 
+  describe('#assign') do
+    it('assigns a particular client to a particular stylist') do
+      test_stylist = Stylist.new ({:name => "Robert", :id => nil})
+      test_stylist.save()
+      test_client = Client.new({:name => "Roberto", :id => nil})
+      test_client.save()
+      test_stylist.assign(test_client)
+      expect(test_stylist.all_assigns()).to(eq([test_client]))
+    end
+  end
 end
