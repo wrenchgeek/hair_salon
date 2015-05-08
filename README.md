@@ -12,6 +12,6 @@ Please don't use it at all.  It doesn't work
 
 HAPPY FRIDAY!
 
-You are not granted rights or licenses to the trademarks of wordcount, including without limitation the Jim Patt name or logo.
+You are not granted rights or licenses to the trademarks of hair_salon, including without limitation the Jim Patt name or logo.
 
 Copyright 2015 Jim Patt
