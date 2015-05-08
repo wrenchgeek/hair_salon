@@ -1,9 +1,4 @@
-# require('spec_helper')
-require('rspec')
-require('pg')
-require('stylists')
-require('clients')
-require('pry')
+require('spec_helper')
 
 describe(Stylist) do
   describe('#id') do
