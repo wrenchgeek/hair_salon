@@ -7,4 +7,11 @@ describe(Stylist) do
       expect(test_stylist.id()).to(eq(1))
     end
   end
+
+  describe('#name') do
+    it('returnst the name of an individual stylist') do
+      test_stylist = Stylist.new({:id => 1, :name => "Edith"})
+      expect(test_stylist.name()).to(eq("Edith"))
+    end
+  end
 end
